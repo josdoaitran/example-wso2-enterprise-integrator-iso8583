@@ -1,4 +1,4 @@
-package org.wso2.carbon.message;
+package org.wso2.transport.iso8583;
 /*
  * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  *
@@ -15,7 +15,6 @@ package org.wso2.carbon.message;
  * limitations under the License.
  */
 
-import org.apache.log4j.Logger;
 import org.jpos.iso.ISOException;
 
 import java.io.IOException;
