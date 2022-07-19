@@ -1,4 +1,4 @@
-package org.wso2.carbon.message;
+package org.wso2.transport.iso8583;
 /*
  * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  *
@@ -35,7 +35,7 @@ public class ConnectionHandler {
     private GenericPackager packager;
 
     public ConnectionHandler(Socket socket) throws IOException, ISOException {
-        this.packager = new GenericPackager("iso87ascii.xml");
+        this.packager = new GenericPackager("jposdef.xml");
         this.serverSocket = socket;
         this.inputStreamReader = new DataInputStream(serverSocket.getInputStream());
         this.outToClient = new DataOutputStream(serverSocket.getOutputStream());
@@ -100,7 +100,7 @@ public class ConnectionHandler {
     private Properties getISO8583Properties() {
         Properties prop = new Properties();
         try {
-            FileInputStream input = new FileInputStream("iso87asciiProperties.xml");
+            FileInputStream input = new FileInputStream("jposdef.xml");
             prop.loadFromXML(input);
             input.close();
         } catch (IOException e) {
